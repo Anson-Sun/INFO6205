@@ -16,9 +16,16 @@ public class InsertionSortBasic {
         for (int i = lo + 1; i < hi; i++) swap(i, a);
     }
 
-    private void swap(int i, Object[] a) {
+    //private void swap(int i, Object[] a) {
+    private void swap(int i, Comparable[] a) {
         // FIXME
-        // END 
+        for(int j = i - 1; j >=0; j--){
+            if(a[j].compareTo(a[j+1]) > 0)
+                swap(a, j, j+1);
+            else
+                break;
+
+        }        // END
     }
 
     private void swap(Object[] a, int j, int i) {
@@ -32,5 +39,6 @@ public class InsertionSortBasic {
         System.out.println(Arrays.toString(args));
         sorter.sort(args);
         System.out.println(Arrays.toString(args));
+
     }
 }

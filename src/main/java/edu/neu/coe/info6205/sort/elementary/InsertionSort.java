@@ -7,6 +7,7 @@ import edu.neu.coe.info6205.sort.BaseHelper;
 import edu.neu.coe.info6205.sort.Helper;
 import edu.neu.coe.info6205.sort.SortWithHelper;
 import edu.neu.coe.info6205.util.Config;
+import edu.neu.coe.info6205.sort.elementary.InsertionSortBasic;
 
 public class InsertionSort<X extends Comparable<X>> extends SortWithHelper<X> {
 
@@ -59,6 +60,18 @@ public class InsertionSort<X extends Comparable<X>> extends SortWithHelper<X> {
         final Helper<X> helper = getHelper();
 
         // FIXME
+        X t;
+        for(int i = from; i < to; i++){
+            for(int j = i - 1; j >=0; j--){
+                if(xs[j].compareTo(xs[j+1]) > 0){
+                    t = xs[j];
+                    xs[j] = xs[j+1];
+                    xs[j+1] = t;
+                }
+                else
+                    break;
+            }
+        }
         // END 
     }
 
