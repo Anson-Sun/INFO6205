@@ -15,10 +15,12 @@ import java.util.concurrent.ForkJoinPool;
  * CONSIDER tidy it up a bit.
  */
 public class Main {
-
+    public static final int  parallelism_number= 500;
+    static ForkJoinPool testPool = new ForkJoinPool(parallelism_number);
     public static void main(String[] args) {
         processArgs(args);
-        System.out.println("Degree of parallelism: " + ForkJoinPool.getCommonPoolParallelism());
+        //System.out.println("Degree of parallelism: " + ForkJoinPool.getCommonPoolParallelism());
+        System.out.println(("Degree of parallelism: " + testPool.getParallelism()));
         Random random = new Random();
         int[] array = new int[2000000];
         ArrayList<Long> timeList = new ArrayList<>();
